@@ -1,0 +1,126 @@
+.image {
+  width: 30vw;
+  height: 50vh;
+}
+.right-content {
+  padding-left: 18%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  width: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.part1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 180px 0px 100px;
+  gap: 30px;
+}
+
+.header-text {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.text-content {
+  font-size: 2.9em;
+  align-items: center;
+  text-align: center;
+  font-style: italic;
+}
+.part2 {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 80px 250px 100px 240px;
+  gap: 30px;
+}
+
+.detailed1 {
+  flex: 1;
+}
+
+.detailed2 {
+  flex: 1;
+}
+
+.header-text2 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.7em;
+  color: rgb(85, 79, 79);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-bottom: 5px;
+}
+
+.header-text2::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: -110px;
+  bottom: 0;
+  height: 2px;
+  background-color: rgb(85, 79, 79);
+  transform: translateY(5px);
+}
+
+.detailed-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  font-size: 1.2em;
+  align-content: center;
+}
+
+.favourite-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #519e4a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 290px;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.favourite-button:hover {
+  background-color: #497944;
+}
+
+@media (max-width: 600px) {
+  .right-content {
+    padding-left: 0;
+    padding-top: 100px;
+    padding-bottom: 300px;
+  }
+  .part1 {
+    flex-direction: column;
+    padding: 0px 0px 0px 0px;
+  }
+  .text-content {
+    font-size: 1.2em;
+  }
+  .favourite-button {
+    margin-top: 10px;
+  }
+  .image {
+    display: flex;
+    align-self: center;
+    width: 90vw;
+    height: 30vh;
+  }
+  .part2 {
+    flex-direction: column;
+    padding: 15px 15px 15px 15px;
+  }
+}

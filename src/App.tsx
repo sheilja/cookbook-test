@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import { data } from "./data";
+import RecipeNavBar from "./Components/RecipeNavBar/RecipeNavBar";
+import RecipeInfo from "./Components/RecipeInfo/RecipeInfo";
+import { Recipe } from "./model/recipe-model";
 
 function App() {
+  const [recipeList, setRecipeList] = useState<Recipe[]>([]);
+  const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
+
+  useEffect(() => {
+    setRecipeList(data);
+    setSelectedRecipeId(data[0].id);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {recipeList.length > 0 && selectedRecipeId && (
+        <div className="main">
+          <RecipeNavBar
+            recipeList={recipeList}
+            selectedRecipeId={selectedRecipeId}
+            setSelectedRecipeId={setSelectedRecipeId}
+          />
+          <RecipeInfo details={recipeList[selectedRecipeId - 1]} />
+        </div>
+      )}
     </div>
   );
 }
